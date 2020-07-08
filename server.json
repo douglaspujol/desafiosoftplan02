@@ -1,0 +1,202 @@
+{
+  "tags": [
+    {
+      "id": "1",
+      "name": "URGENTE",
+      "background": "#15899d"
+    },
+    {
+      "id": "2",
+      "name": "Plano de Saúde",
+      "background": "#275ba7"
+    },
+    {
+      "id": "3",
+      "name": "Banco Juros",
+      "background": "#009381"
+    },
+    {
+      "id": "4",
+      "name": "DPVAT",
+      "background": "#dd2f1e"
+    }
+  ],
+  "cards": [
+    {
+      "id": "1",
+      "tags": [
+        {
+          "id": "2",
+          "name": "Plano de Saúde",
+          "background": "#275ba7"
+        }
+      ],
+      "partes": {
+        "ativa": {
+          "name": "José Arnaldo dos Santos"
+        },
+        "passiva": {
+          "name": "José Bonifácio da Silva"
+        }
+      },
+      "classe": "Procedimento Comum",
+      "assunto": "Requerimento de Reintegração de Posse",
+      "numero": "1011907-26.2015.8.26.0405/90001"
+    },
+    {
+      "id": "2",
+      "tags": [
+        {
+          "id": "1",
+          "name": "URGENTE",
+          "background": "#15899d"
+        }
+      ],
+      "partes": {
+        "ativa": {
+          "name": "Joselvado Barbosa"
+        },
+        "passiva": {
+          "name": "ULTRAMED"
+        }
+      },
+      "classe": "Monitória",
+      "assunto": "Empreitada",
+      "numero": "93827-26.2015.8.26.0405/90001"
+    },
+    {
+      "id": "3",
+      "tags": [
+        {
+          "id": "1",
+          "name": "URGENTE",
+          "background": "#15899d"
+        }
+      ],
+      "partes": {
+        "ativa": {
+          "name": "Felipe Genuino"
+        },
+        "passiva": {
+          "name": "Carlos Eduardo Silva"
+        }
+      },
+      "classe": "Procedimento Comum",
+      "assunto": "Requerimento de Reintegração de Posse",
+      "numero": "8974426-26.2015.8.26.0405/90001"
+    },
+    {
+      "id": "4",
+      "tags": [
+        {
+          "id": "2",
+          "name": "Plano de Saúde",
+          "background": "#275ba7"
+        }
+      ],
+      "partes": {
+        "ativa": {
+          "name": "José Arnaldo dos Santos"
+        },
+        "passiva": {
+          "name": "José Bonifácio da Silva"
+        }
+      },
+      "classe": "Procedimento Comum",
+      "assunto": "Requerimento de Reintegração de Posse",
+      "numero": "1109007-26.2015.8.26.0405/90001"
+    },
+    {
+      "id": "5",
+      "tags": [
+        {
+          "id": "2",
+          "name": "Plano de Saúde",
+          "background": "#275ba7"
+        }
+      ],
+      "partes": {
+        "ativa": {
+          "name": "Deiver dos Santos"
+        },
+        "passiva": {
+          "name": "Rodrigo Carpes Ramos"
+        }
+      },
+      "classe": "Reintegração",
+      "assunto": "Esbulho / Turbação / Ameaça",
+      "numero": "8712221-26.2013.8.26.0405/90001"
+    },
+    {
+      "id": "6",
+      "tags": [
+        {
+          "id": "2",
+          "name": "Plano de Saúde",
+          "background": "#275ba7"
+        },
+        {
+          "id": "4",
+          "name": "DPVAT",
+          "background": "#dd2f1e"
+        }
+      ],
+      "partes": {
+        "ativa": {
+          "name": "Patricia Saramela"
+        },
+        "passiva": {
+          "name": "Marcelo Rocha"
+        }
+      },
+      "classe": "Procedimento Comum",
+      "assunto": "Comissão",
+      "numero": "9829007-26.2014.8.26.0405/90001"
+    },
+    {
+      "id": "7",
+      "tags": [],
+      "partes": {
+        "ativa": {
+          "name": "Rafael Nogoceke"
+        },
+        "passiva": {
+          "name": "Matheus Hiroaki Matsuda"
+        }
+      },
+      "classe": "Procedimento Comum",
+      "assunto": "Requerimento de Reintegração de Posse",
+      "numero": "101307-26.2015.8.26.0405/90001"
+    },
+    {
+      "id": "8",
+      "tags": [],
+      "partes": {
+        "ativa": {
+          "name": "Letícia Espíndola Magalhães"
+        },
+        "passiva": {
+          "name": "Yeda Maria Barros"
+        }
+      },
+      "classe": "Embargos de Terceiro",
+      "assunto": "Indisponibilidade de Bens",
+      "numero": "817224-26.2015.8.26.0405/90001"
+    },
+    {
+      "id": "9",
+      "tags": [],
+      "partes": {
+        "ativa": {
+          "name": "Maria Benedita Saraiva"
+        },
+        "passiva": {
+          "name": "Gisele Mariele Debachio"
+        }
+      },
+      "classe": "Procedimento Comum",
+      "assunto": "Requerimento de Reintegração de Posse",
+      "numero": "1044447-26.2015.8.26.0405/90001"
+    }
+  ]
+}
