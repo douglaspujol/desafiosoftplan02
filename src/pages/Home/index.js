@@ -1,49 +1,47 @@
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import Search from '../../components/Search/index';
 import AsideNav from '../../components/AsideNav/index';
 import Card from '../../components/Card/index';
-import * as TagsAction from '../../store/modules/tags/actions';
-
+import { addTagApi } from '../../store/modules/tags/actions';
+import { addCardApi } from '../../store/modules/cards/actions';
 import api from '../../services/api';
 
-import { Container, Main, Cards } from './styles';
+import { Container, Main, Cards, Scroll } from './styles';
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+export default function Home() {
+  const dispatch = useDispatch();
 
-  async componentDidMount() {
-    const response = await api.get('/tags');
-    const { addTag } = this.props;
-    const { data } = response;
-    data.forEach((e) => addTag(e));
-  }
+  useEffect(() => {
+    async function getTags() {
+      const response = await api.get('/tags');
+      const { data } = response;
+      dispatch(addTagApi(data));
+    }
+    getTags();
+  }, []);
 
-  render() {
-    return (
-      <Container>
-        <AsideNav />
+  useEffect(() => {
+    async function getCards() {
+      const response = await api.get('/cards');
+      const { data } = response;
+      dispatch(addCardApi(data));
+    }
+    getCards();
+  }, []);
 
-        <Main>
-          <Search />
+  return (
+    <Container>
+      <AsideNav />
 
+      <Main>
+        <Search />
+        <Scroll>
           <Cards>
             <Card />
-            <Card />
-            <Card />
-            <Card />
           </Cards>
-        </Main>
-      </Container>
-    );
-  }
+        </Scroll>
+      </Main>
+    </Container>
+  );
 }
-
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(TagsAction, dispatch);
-
-export default connect(null, mapDispatchToProps)(Home);

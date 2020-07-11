@@ -8,9 +8,11 @@ export const Container = styled.div`
   padding: 24px 26px;
   display: flex;
   align-items: center;
+  max-width: 1085px;
 `;
 
 export const Wrapper = styled.div`
+  width: 500px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -91,64 +93,17 @@ export const Actions = styled.div`
       }
     }
   }
-
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-
-    margin-left: 30px;
-    button.menuDropDown {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: none;
-      border: none;
-      svg {
-        font-size: 16px;
-        margin-right: 11px;
-      }
-    }
-    div {
-      margin: 0;
-      position: absolute;
-      top: 5px;
-      left: 0;
-      z-index: 1;
-    }
-
-    div.options {
-      display: flex;
-      flex-direction: column;
-      background: #ffffff;
-
-      align-items: flex-start;
-      width: 186px;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
-
-      padding: 10px 10px 16px 10px;
-      p {
-        font-size: 14px;
-        margin-bottom: 5px;
-      }
-    }
-  }
+`;
+export const Tags = styled.ul`
+  display: flex;
+  align-items: flex-start;
 `;
 
-export const Button = styled.button`
-  margin-top: 5px;
-  border: none;
-
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-
-  height: 25px;
-  width: 167px;
-
-  font-size: 12px;
-  color: #ffffff;
-  padding: 5px;
-  background: ${(props) => props.buttonColor || ' #01ae76'};
+export const Tag = styled.li`
+  background: ${(props) => props.tagColor || '  #20bbd3'};
+  padding: 2px 5px;
+  border-radius: 2px;
+  max-width: 150px;
+  color: #fff;
+  margin-right: 10px;
 `;

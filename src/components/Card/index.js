@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-
-import Collapse from '@material-ui/core/Collapse';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
 import FolderOpenOutlinedIcon from '@material-ui/icons/FolderOpenOutlined';
-import LabelOutlinedIcon from '@material-ui/icons/LabelOutlined';
-import { connect } from 'react-redux';
+import DropDown from './DropDown/index';
 
 import {
   Container,
@@ -15,90 +13,59 @@ import {
   InformacoesAdicionais,
   Actions,
   Wrapper,
-  Button,
+  Tags,
+  Tag,
 } from './styles';
 
-function Card({ tags }) {
-  const [cheked, setCheked] = useState(false);
+export default function Card() {
+  const filtrado = useSelector((state) => state.cards.filtro);
 
-  function handleFocus() {
-    if (!cheked) {
-      setCheked(true);
-    }
-  }
-
-  function handleBlur() {
-    if (cheked) {
-      setCheked(false);
-    }
-  }
+  const cardList = useSelector((state) => state.cards.cardList);
 
   return (
-    <Container>
-      <Wrapper>
-        <Infos>
-          <div className="name">
-            <AddCircleIcon />
-            <p>Reinaldo</p>
-            <strong>+2</strong>
-          </div>
-          <div className="plano">
-            <RemoveCircleIcon />
-            <p>Unimed</p>
-          </div>
-        </Infos>
+    <>
+      {(filtrado.length > 0 ? filtrado : cardList).map((card) => (
+        <Container key={card.id}>
+          <Wrapper>
+            <Infos>
+              <div className="name">
+                <AddCircleIcon />
+                <p>{card.partes.ativa.name}</p>
+                <strong>+2</strong>
+              </div>
+              <div className="plano">
+                <RemoveCircleIcon />
+                <p>Unimed</p>
+              </div>
+            </Infos>
 
-        <Procedimento>
-          <span>Procedimento Comum - </span>
-          <strong>Requirimento de Reintegração de Posse</strong>
-        </Procedimento>
+            <Procedimento>
+              <span>{card.classe} - </span>
+              <strong>{card.assunto}</strong>
+            </Procedimento>
 
-        <InformacoesAdicionais>
-          <p>27/12/2018 </p>
-          <span>User Interface</span>
-          <span>Estatuto Idoso</span>
-        </InformacoesAdicionais>
-      </Wrapper>
-
-      <Actions>
-        <div className="abrirPasta">
-          <button type="button">
-            <FolderOpenOutlinedIcon />
-            <span>Abrir Pasta</span>
-          </button>
-        </div>
-
-        <div>
-          <button
-            onFocus={() => handleFocus()}
-            onBlur={() => handleBlur()}
-            type="button"
-            className="menuDropDown"
-          >
-            <LabelOutlinedIcon />
-          </button>
-          <Collapse in={cheked}>
-            <div className="options">
-              <p>Etiquetar como:</p>
-              {tags.map((tag) => (
-                <Button
-                  key={tag.id}
-                  type="button"
-                  className="tags"
-                  buttonColor={tag.background}
-                >
-                  {tag.name}
-                </Button>
-              ))}
+            <InformacoesAdicionais>
+              <p>{card.numero}</p>
+            </InformacoesAdicionais>
+          </Wrapper>
+          <Actions>
+            <div className="abrirPasta">
+              <button type="button">
+                <FolderOpenOutlinedIcon />
+                <span>Abrir Pasta</span>
+              </button>
             </div>
-          </Collapse>
-        </div>
-      </Actions>
-    </Container>
+            <DropDown id={card.id} />
+          </Actions>
+          <Tags>
+            {card.tags.map((tag) => (
+              <Tag key={tag.id} tagColor={tag.background}>
+                {tag.name}
+              </Tag>
+            ))}
+          </Tags>
+        </Container>
+      ))}
+    </>
   );
 }
-
-const mapStateToProps = (state) => ({
-  tags: state.tags,
-});
-export default connect(mapStateToProps)(Card);

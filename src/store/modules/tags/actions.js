@@ -1,6 +1,12 @@
-export function addTag(newTag) {
+export function addTagToList(newTag) {
   return {
     type: '@tag/ADD',
-    newTag,
+    payload: { newTag },
+  };
+}
+export function addTagApi(newTag) {
+  return {
+    type: '@tag/ADD_TAG_OF_API',
+    payload: { newTag },
   };
 }
